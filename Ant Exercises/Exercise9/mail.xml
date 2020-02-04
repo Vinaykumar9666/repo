@@ -1,0 +1,18 @@
+<project name="test" default="test">
+
+<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+
+	<target name="test">
+	
+		<mail mailhost="smtp.gmail.com" mailport="465" subject="Test Mail from Ant Build"
+			user="capitalinfosol@gmail.com " password="passwod" from="capitalinfosol@gmail.com" tolist="capitalinfosol@gmail.com" ssl="true" encoding="mime" messagemimetype="text/html">
+			<message>Test Mail from Ant Build</message>
+			<attachments>
+				<fileset dir="src">
+					<include name="**/*.java"/>
+				</fileset>
+			</attachments>
+		</mail>		
+	</target>
+
+</project>

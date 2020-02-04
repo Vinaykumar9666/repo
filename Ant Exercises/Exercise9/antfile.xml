@@ -1,0 +1,8 @@
+<project name="test" default="test">
+	<target name="test">
+		<echo>
+			This is the default Target
+		</echo>
+		<ant antfile="antCall.xml" target="clean"/>	
+	</target>
+</project>

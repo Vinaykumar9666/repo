@@ -1,0 +1,12 @@
+<project name="test" default="capital" >
+
+	<target name="capital" depends="info">
+		<echo>'hello from capital target </echo>
+	</target>
+	
+	<target name="info">
+		<echo> 'hello from info target' </echo>
+	</target>
+
+
+</project>

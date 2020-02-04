@@ -1,0 +1,27 @@
+<project name="test" default="test">
+
+<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+
+	<target name="test">
+	
+		<if>
+			<equals arg1="${ENV}" arg2="DEV" />
+			<then>
+				<echo> An Inside the DEV block</echo>
+			</then>
+		
+			<else>
+				<if>
+					<equals arg1="${ENV}" arg2="QA" />
+					<then>
+						<echo> An Inside the QA block</echo>
+					</then>
+					<else>
+						<echo> An Inside Non DEV NON QA block</echo>
+					</else>
+				</if>
+			</else>
+		</if>
+	</target>
+
+</project>

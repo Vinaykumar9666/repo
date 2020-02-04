@@ -1,0 +1,10 @@
+<project name="test" default="test">
+
+	<target name="test">
+	
+		<scp file="build/jar/HelloWorld.jar" 
+		todir="root@192.168.242.139:/dir1" password="root123" trust="true" />
+		
+	</target>
+
+</project>

@@ -1,0 +1,35 @@
+<project name="test" default="Main">
+
+	<property file="antcall.properties"/>
+	
+	<target name="Main">
+       <antcall target="clean" />   
+	   <antcall target="compile"/>
+	   <antcall target="package"/>
+	   <antcall target="run"/>	   
+    </target>
+	
+    <target name="clean">
+       <delete dir="${build_dir}" /> 
+    </target>
+
+    <target name="compile">
+        <echo> Java related tasks </echo>
+         <mkdir dir="${build_dir}/${classes_dir}" />
+         <javac srcdir="${src_dir}" destdir="${build_dir}/${classes_dir}" />
+    </target>
+   
+   <target name="package">
+       <echo> Java package tasks </echo>
+       <jar basedir="${build_dir}/${classes_dir}" destfile="${build_dir}/${jar_dir}/${filename}.jar">
+          <manifest>
+             <attribute name="Main-Class" value="Hello"/>
+          </manifest>
+       </jar>
+   </target>
+   <target name="run">
+      <echo> running jar file tasks </echo>
+      <java jar="${build_dir}/${jar_dir}/${filename}.jar" fork='true'/>
+   </target>
+
+</project>

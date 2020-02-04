@@ -1,0 +1,15 @@
+<project name="test" default="test">
+
+	<target name="test">
+	
+	<!--<sshexec host="192.168.242.139" username="root" password="root123" 
+	 command="touch /dir1/ant.txt" trust="true" /> -->
+	 
+	 <sshexec host="192.168.242.139" username="${uname}" password="${pwd}" 
+	 command="rm -f /dir1/ant.txt" trust="true" />
+	
+
+		
+	</target>
+
+</project>
